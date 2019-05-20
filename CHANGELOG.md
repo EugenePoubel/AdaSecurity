@@ -9,10 +9,15 @@ V 1.0.0
 V 1.0.1
 - Suppréssion des fichiers inutile liée a la template
 - Restructuration des dossiers
-- 
 
 ------
 
 V 1.5.0
 
 - Version Final du programme Arduino
+
+------
+
+V 1.5.5
+
+- Mise a jours des dépendances (voir sources)
