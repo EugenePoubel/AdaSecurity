@@ -316,7 +316,7 @@ mysqli_close();
 
   <!-- plugins:js -->
   <!-- Initialisation de la librairie jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js" type="text/javascript"></script>
 
 <script>jQuery().ready(function(){
     setInterval("LectureCapt()",1000);
