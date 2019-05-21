@@ -282,7 +282,7 @@ var init = false;
                       </thead>
                         <tbody>
                       <?php
-include("connect.php");
+include("php/connect.php");
 $link=Connection();
 $result=mysqli_query($link,'SELECT timeStamp,temperature,humidity,CO2T FROM templog ORDER BY timeStamp DESC LIMIT 8'); //DESC",$link);
 if($result!==FALSE){
@@ -327,7 +327,7 @@ mysqli_close();
     document.getElementById("hummax").value = hummax;
 });
 function LectureCapt(){
-    jQuery.post("update.php",function( data ) {
+    jQuery.post("php/update.php",function( data ) {
         jQuery("#tempR").html(data);
         var test= document.getElementById("tempR").value;
        if (test == "error" )

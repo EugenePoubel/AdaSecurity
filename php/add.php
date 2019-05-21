@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Europe/Paris');
 $server="localhost";
 $user="id9486133_root";
 $pass="*qfym6*55";
@@ -12,6 +13,7 @@ $db="id9486133_ada";
 <body>
 
 <?php
+
 if(isset($_POST['temp1']))
 {
   $temp1=$_POST['temp1'];
