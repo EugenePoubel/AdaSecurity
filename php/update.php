@@ -39,14 +39,16 @@
 	$rowtime = mysqli_fetch_row($timestampTabl);
 	$timeM=$rowtime[0];
 
-
+	$result=mysqli_query($link,'SELECT timeparis,temperature,humidity,CO2T FROM templog ORDER BY timeStamp DESC LIMIT 8'); //DESC",$link);
+	if($result!==FALSE){
+	  while($row = mysqli_fetch_array($result)) {
+	   printf("<tr><td> &nbsp;%s </td><td> &nbsp;%s&nbsp; </td><td> &nbsp;%s&nbsp; </td><td> &nbsp;%s&nbsp; </td></tr>",
+	   $row["timeparis"], $row["temperature"], $row["humidity"], $row["CO2T"]);
+	}
+}
 
  mysqli_close($link);
  /*Display the Data table*/
- echo $tempM;
- echo $humM;
- echo $Co2M;
- echo $time;
 
  ?>
  <script> var tempR = <?php echo $tempM ?>;

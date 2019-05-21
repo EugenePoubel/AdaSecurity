@@ -284,11 +284,11 @@ var init = false;
                       <?php
 include("php/connect.php");
 $link=Connection();
-$result=mysqli_query($link,'SELECT timeStamp,temperature,humidity,CO2T FROM templog ORDER BY timeStamp DESC LIMIT 8'); //DESC",$link);
+$result=mysqli_query($link,'SELECT timeparis,temperature,humidity,CO2T FROM templog ORDER BY timeStamp DESC LIMIT 8'); //DESC",$link);
 if($result!==FALSE){
   while($row = mysqli_fetch_array($result)) {
    printf("<tr><td> &nbsp;%s </td><td> &nbsp;%s&nbsp; </td><td> &nbsp;%s&nbsp; </td><td> &nbsp;%s&nbsp; </td></tr>",
-   $row["timeStamp"], $row["temperature"], $row["humidity"], $row["CO2T"]);
+   $row["timeparis"], $row["temperature"], $row["humidity"], $row["CO2T"]);
 }
 mysqli_free_result($result);
 mysqli_close();
@@ -383,8 +383,9 @@ function LectureCapt(){
     execute =true;
      //afficher le message d'alerte une fois toute les minute maximum pour éviter de bloqué la page
   }
-  if (humMin<hum<humcapt || tempMin<temp<tempcapt || Co2<Co2capt )            //Cette partie du script sera au final un pop d'avertissement
+  if ( humcapt>hum|| Co2capt>Co2  || tempcapt>temp || humcapt<humMin || tempcapt<tempMin   )            //Cette partie du script sera au final un pop d'avertissement
   {
+    console.log("hop j'ai hop")
     if(execute == false)
     {
       execute=true;
