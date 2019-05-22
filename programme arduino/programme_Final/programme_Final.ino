@@ -55,7 +55,12 @@ void loop()
 /**********************Récupération des Valeurs des Capteurs**********************************/
 h = (int) dht.readHumidity(); 
 t = (int) dht.readTemperature();
+if (h==0  && t==0)
+{
+  Serial.print("Erreur du capteurs DHT22 (temp et hygrométrie) vérifier les branchement et appuyer sur reset de l'arduino");
+  delay(3600000);
 
+}
 data = String("temp1=") + t + "&hum1=" + h + "&co21=" + c;
   // on lit les caractères s'il y en a de disponibles
   if(client.available()) {
@@ -131,7 +136,7 @@ void requete() {
         break;
     }
   }
-  Serial.print("Envoie terminer");
+  Serial.println("Envoie terminer");
 }
 /**********************Lecture du Capteurs CO2**********************************/
 float MGRead(int mg_pin) {

@@ -226,7 +226,9 @@ mysqli_close();
 <script>jQuery().ready(function(){
     setInterval("LectureCapt()",1000);
     setInterval("IHM()",2000)
-    setInterval(function r (){execute=false;}, 60000); //l'alerte s'affiche 1 fois par minute
+    setInterval(function r (){execute=false;}, 60000);
+    setInterval(function rs (){son=false;}, 60000);
+     //l'alerte s'affiche 1 fois par minute
     document.getElementById("Co2max").value = co2max;
     document.getElementById("tempmax").value = tempmax;
     document.getElementById("hummax").value = hummax;
@@ -265,6 +267,7 @@ function LectureCapt(){
   <script src="js/dataTables.bootstrap4.js"></script>
   <script>
   var execute = false;
+  var son=false;
    function IHM ()
 {
 
@@ -278,6 +281,7 @@ function LectureCapt(){
   var hum = document.getElementById("hummax").value;
   var temp= document.getElementById("tempmax").value;
   var Co2= document.getElementById("Co2max").value;
+  var audio = new Audio('alarme.mp3');
   //afficher les valeurs
   if (Co2capt == -1) { document.getElementById("Co2aff").innerHTML = 'Moins de 400 ppm';}
   else {document.getElementById("Co2aff").innerHTML = Co2capt;}
@@ -294,12 +298,16 @@ function LectureCapt(){
   }
   if ( humcapt>hum|| Co2capt>Co2  || tempcapt>temp || humcapt<humMin || tempcapt<tempMin   )            //Cette partie du script sera au final un pop d'avertissement
   {
+    if (son == false)
+     {
+       son=true;
+       audio.play();
+     }
     console.log("hop j'ai hop")
     if(execute == false)
     {
       execute=true;
       alert("Attention ! Les valeurs ont été dépassées veuillez à prendre les précautions nécessaires");
-
     }
   }
 }
