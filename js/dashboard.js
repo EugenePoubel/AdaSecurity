@@ -1,15 +1,31 @@
-(function($) {
+/* $(document).ready(function(){
   'use strict';
-  $(function() {
+    $.ajax({
+  url : "https://adasecurity.fr/php/update.php",
+  type : "GET",
+  success : function(data){
+    console.log(data);
+    var temps = [];
+    var temperature = [];
+    var humidity = [];
+    var CO2 = [];
+
+    for(var i in data) {
+  temps.push(data[i].temps);
+  temperature.push(data[i].temperature);
+  humidity.push(data[i].humidité);
+  CO2.push(data[i].CO2);
+}
+
 
     if ($('#cash-deposits-chart').length) {
       var cashDepositsCanvas = $("#cash-deposits-chart").get(0).getContext("2d");
       var data = {
-        labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8"],
+        labels: temps,
         datasets: [
           {
-            label: 'Returns',
-            data: [27, 35, 30, 40, 52, 48, 54, 46, 70],
+            label: 'temperature',
+            data: temperature,
             borderColor: [
               '#ff4747'
             ],
@@ -18,8 +34,8 @@
             pointBackgroundColor: "#fff"
           },
           {
-            label: 'Sales',
-            data: [29, 40, 37, 48, 64, 58, 70, 57, 80],
+            label: 'Humidité',
+            data: humidity,
             borderColor: [
               '#4d83ff'
             ],
@@ -28,8 +44,8 @@
             pointBackgroundColor: "#fff"
           },
           {
-            label: 'Loss',
-            data: [90, 62, 80, 63, 72, 62, 40, 50, 38],
+            label: 'CO2',
+            data: CO2,
             borderColor: [
               '#ffc100'
             ],
@@ -242,6 +258,84 @@
       },
       searching: false, paging: false, info: false
     });
-
   });
-})(jQuery);
+}); */
+$(document).ready(function(){
+	$.ajax({
+		url : "https://adasecurity.fr/php/chart.php",
+		type : "GET",
+		success : function(data){
+			console.log(data);
+
+      var temps = [];
+      var temperature = [];
+      var humidity = [];
+      var CO2 = [];
+
+      for(var i in data) {
+    temps.push(data[i].temps);
+    temperature.push(data[i].temperature);
+    humidity.push(data[i].humidity);
+    CO2.push(data[i].CO2);
+  }
+
+
+			var chartdata = {
+				labels: temps,
+				datasets: [
+					{
+						label: "Température",
+						fill: false,
+						lineTension: 0.1,
+						backgroundColor: "rgba(59, 89, 152, 0.75)",
+						borderColor: "rgba(59, 89, 152, 1)",
+						pointHoverBackgroundColor: "rgba(59, 89, 152, 1)",
+						pointHoverBorderColor: "rgba(59, 89, 152, 1)",
+						data: temperature
+					},
+					{
+						label: "Humidité",
+						fill: false,
+						lineTension: 0.1,
+						backgroundColor: "rgba(29, 202, 255, 0.75)",
+						borderColor: "rgba(29, 202, 255, 1)",
+						pointHoverBackgroundColor: "rgba(29, 202, 255, 1)",
+						pointHoverBorderColor: "rgba(29, 202, 255, 1)",
+						data: humidity
+					},
+					{
+						label: "CO2",
+						fill: false,
+						lineTension: 0.1,
+						backgroundColor: "rgba(211, 72, 54, 0.75)",
+						borderColor: "rgba(211, 72, 54, 1)",
+						pointHoverBackgroundColor: "rgba(211, 72, 54, 1)",
+						pointHoverBorderColor: "rgba(211, 72, 54, 1)",
+						data: CO2
+					}
+				]
+			};
+      $('#recent-purchases-listing').DataTable({
+        "aLengthMenu": [
+          [5, 10, 15, -1],
+          [5, 10, 15, "All"]
+        ],
+        "iDisplayLength": 10,
+        "language": {
+          search: ""
+        },
+        searching: false, paging: false, info: false
+      });
+
+			var ctx = $("#cash-deposits-chart");
+
+			var LineGraph = new Chart(ctx, {
+				type: 'line',
+				data: chartdata
+			});
+		},
+		error : function(data) {
+
+		}
+	});
+});

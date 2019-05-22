@@ -135,102 +135,6 @@ var init = false;
                         </div>
                       </div>
                     </div>
-                    <div class="tab-pane fade" id="sales" role="tabpanel" aria-labelledby="sales-tab">
-                      <div class="d-flex flex-wrap justify-content-xl-between">
-                        <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                          <i class="mdi mdi-calendar-heart icon-lg mr-3 text-primary"></i>
-                          <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Start date</small>
-                            <div class="dropdown">
-                              <a class="btn btn-secondary dropdown-toggle p-0 bg-transparent border-0 text-dark shadow-none font-weight-medium" href="#" role="button" id="dropdownMenuLinkA" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <h5 class="mb-0 d-inline-block">26 Jul 2018</h5>
-                              </a>
-                              <div class="dropdown-menu" aria-labelledby="dropdownMenuLinkA">
-                                <a class="dropdown-item" href="#">12 Aug 2018</a>
-                                <a class="dropdown-item" href="#">22 Sep 2018</a>
-                                <a class="dropdown-item" href="#">21 Oct 2018</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                          <i class="mdi mdi-download mr-3 icon-lg text-warning"></i>
-                          <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Downloads</small>
-                            <h5 class="mr-2 mb-0">2233783</h5>
-                          </div>
-                        </div>
-                        <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                          <i class="mdi mdi-eye mr-3 icon-lg text-success"></i>
-                          <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Total views</small>
-                            <h5 class="mr-2 mb-0">9833550</h5>
-                          </div>
-                        </div>
-                        <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                          <i class="mdi mdi-currency-usd mr-3 icon-lg text-danger"></i>
-                          <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Revenue</small>
-                            <h5 class="mr-2 mb-0">$577545</h5>
-                          </div>
-                        </div>
-                        <div class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                          <i class="mdi mdi-flag mr-3 icon-lg text-danger"></i>
-                          <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Flagged</small>
-                            <h5 class="mr-2 mb-0">3497843</h5>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tab-pane fade" id="purchases" role="tabpanel" aria-labelledby="purchases-tab">
-                      <div class="d-flex flex-wrap justify-content-xl-between">
-                        <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                          <i class="mdi mdi-calendar-heart icon-lg mr-3 text-primary"></i>
-                          <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Start date</small>
-                            <div class="dropdown">
-                              <a class="btn btn-secondary dropdown-toggle p-0 bg-transparent border-0 text-dark shadow-none font-weight-medium" href="#" role="button" id="dropdownMenuLinkA" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <h5 class="mb-0 d-inline-block">26 Jul 2018</h5>
-                              </a>
-                              <div class="dropdown-menu" aria-labelledby="dropdownMenuLinkA">
-                                <a class="dropdown-item" href="#">12 Aug 2018</a>
-                                <a class="dropdown-item" href="#">22 Sep 2018</a>
-                                <a class="dropdown-item" href="#">21 Oct 2018</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                          <i class="mdi mdi-currency-usd mr-3 icon-lg text-danger"></i>
-                          <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Revenue</small>
-                            <h5 class="mr-2 mb-0">$577545</h5>
-                          </div>
-                        </div>
-                        <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                          <i class="mdi mdi-eye mr-3 icon-lg text-success"></i>
-                          <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Total views</small>
-                            <h5 class="mr-2 mb-0">9833550</h5>
-                          </div>
-                        </div>
-                        <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                          <i class="mdi mdi-download mr-3 icon-lg text-warning"></i>
-                          <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Downloads</small>
-                            <h5 class="mr-2 mb-0">2233783</h5>
-                          </div>
-                        </div>
-                        <div class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                          <i class="mdi mdi-flag mr-3 icon-lg text-danger"></i>
-                          <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Flagged</small>
-                            <h5 class="mr-2 mb-0">3497843</h5>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -252,13 +156,14 @@ var init = false;
                                 <h1>Réglage des seuils: <h1>
                 <h2>Capteurs Humidité<h2>
               <p>Valeurs Choisis:</p>
-              <input type="number" id="hummax" value="0" max="100" min="0" step="1">
+              <p> Entre <input type="number" id="humMini" value="0" max="100" min="0" step="1"> et  <input type="number"  id="hummax" value="0" max="100" min="0" step="1"> % </p>
               <h2>Capteurs Température<h2>
                 <p>Valeurs Choisis:</p>
-                <input type="number" id="tempmax" value="0" max="200" min="0" step="1">
+                  <p> Entre <input type="number" id="tempMini" value="0" max="200" min="0" step="1"> et <input type="number" id="tempmax" value="0" max="100" min="0" step="1"> °C </p>
                 <h2>Capteurs C02<h2>
-                  <p>Valeurs Choisis:</p>
-                  <input type="number" id="Co2max" value="0" max="1000" min="0" step="1">
+                  <p>Valeurs Max Choisis:</p>
+                     <p> <input type="number" id="Co2max" value="0" max="1000" min="0" step="1"> ppm Maximum </p>
+                     <p> <B>Remarques:</B>Les valeurs chargé par défaut sont des valeurs recommandée pour une salle de serveur voir "Sources et documentation"
                   <p hidden >Code (Test Doit être Non visible)</p>
                   <div hidden  id="tempR">error</div>
               </div>
@@ -325,6 +230,10 @@ mysqli_close();
     document.getElementById("Co2max").value = co2max;
     document.getElementById("tempmax").value = tempmax;
     document.getElementById("hummax").value = hummax;
+    document.getElementById("tempMini").value= tempMin;
+    document.getElementById("humMini").value= humMin;
+
+
 });
 function LectureCapt(){
     jQuery.post("php/update.php",function( data ) {
@@ -378,7 +287,7 @@ function LectureCapt(){
 
   if (init == false) //Initialisation de l'ihm
   {
-    alert("Initialisation du script de réglage des seuils valeurs par défaut Humidité: " + humMin +"%>humiditée>80%     Température: " + tempMin +"°C>température>30°C  CO2: co2>800.    Pour changer les valeurs par défaut reférez vous a la section documentation du site ");
+
     init = true;
     execute =true;
      //afficher le message d'alerte une fois toute les minute maximum pour éviter de bloqué la page
