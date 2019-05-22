@@ -4,7 +4,7 @@
 #include <DHT.h>
 /************************Déclaration de broches************************************/
 #define MG_PIN                       (A5)  
-#define DHTPIN 2
+#define DHTPIN 8
 /************************Déclaration Relative au programme des capteurs ************************************/
 #define DHTTYPE DHT22
 DHT dht(DHTPIN, DHTTYPE);

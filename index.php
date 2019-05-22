@@ -60,15 +60,8 @@ var init = false;
               <span class="menu-title">Tableau de Bord</span>
             </a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
-              <i class="mdi mdi-chart-pie menu-icon"></i>
-              <span class="menu-title">Graphiques</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="documentation/documentation.html">
+            <a class="nav-link" href="https://docs.google.com/document/d/1d3IyaJtsYLWANcrYfLyFpBNgW4FEjS3jwaaKHrKI2Z0/edit?usp=sharing">
               <i class="mdi mdi-file-document-box-outline menu-icon"></i>
               <span class="menu-title">Sources et documentation</span>
             </a>
@@ -145,7 +138,7 @@ var init = false;
               <div class="card">
                 <div class="card-body">
                   <p class="card-title">Graphique</p>
-                  <p class="mb-4">Graphique avec les 3 Capteurs pour avoir un Graphique correspondant a chaque Capteurs rendez vous dans la section Graphiques</p>
+                  <p class="mb-4"> Évolution de la température, de l'humidité et de la concentration de co2 dans l'air  en fonction du temps</p>
                   <div id="cash-deposits-chart-legend" class="d-flex justify-content-center pt-3"></div>
                   <canvas id="cash-deposits-chart"></canvas>
                 </div>
@@ -294,6 +287,7 @@ function LectureCapt(){
 
     init = true;
     execute =true;
+    son=true;
      //afficher le message d'alerte une fois toute les minute maximum pour éviter de bloqué la page
   }
   if ( humcapt>hum|| Co2capt>Co2  || tempcapt>temp || humcapt<humMin || tempcapt<tempMin   )            //Cette partie du script sera au final un pop d'avertissement
