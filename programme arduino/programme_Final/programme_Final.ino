@@ -52,14 +52,10 @@ void setup() {
 /***********************************************************************************************/
 void loop()
 {
-int percentage;                                       // declarer la variable dans lequelle on mettra la valeur en ppm
-float volts;                                          // declarer la variable dans lequelle on mettra la valeur en volt
-volts = MGRead(MG_PIN);  
-percentage = MGGetPercentage(volts, CO2Curve); 
 /**********************Récupération des Valeurs des Capteurs**********************************/
 h = (int) dht.readHumidity(); 
 t = (int) dht.readTemperature();
-c = percentage;
+
 data = String("temp1=") + t + "&hum1=" + h + "&co21=" + c;
   // on lit les caractères s'il y en a de disponibles
   if(client.available()) {
@@ -80,6 +76,11 @@ data = String("temp1=") + t + "&hum1=" + h + "&co21=" + c;
   // Si on est déconnecté
   // et que cela fait plus de xx secondes qu'on a pas fait de requête
   if(!client.connected() && ((millis() - derniereRequete) > updateInterval)) {
+ int percentage;                                       // declarer la variable dans lequelle on mettra la valeur en ppm
+float volts;                                          // declarer la variable dans lequelle on mettra la valeur en volt
+volts = MGRead(MG_PIN);  
+percentage = MGGetPercentage(volts, CO2Curve); 
+c = percentage;
     requete();
   }
 
@@ -108,7 +109,8 @@ void requete() {
 
       // On enregistre le moment d'envoi de la dernière requête
       derniereRequete = millis();
-  } else {
+  }
+  else {
     // La connexion a échoué :(
     // On ferme notre client
     client.stop();
@@ -129,6 +131,7 @@ void requete() {
         break;
     }
   }
+  Serial.print("Envoie terminer");
 }
 /**********************Lecture du Capteurs CO2**********************************/
 float MGRead(int mg_pin) {
